@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -52,7 +53,7 @@ class TextStyle
             $oRTParagraphBody = new RichTextParagraph();
             $oRTParagraphBody->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER)
-                ->setIndent(-324900 / 9525)
+                ->setIndent(-342900 / 9525)
                 ->setMarginLeft(342900 / 9525);
             $oRTParagraphBody->getFont()->setSize(32)->setColor($oColorTX1);
             $this->bodyStyle[1] = $oRTParagraphBody;

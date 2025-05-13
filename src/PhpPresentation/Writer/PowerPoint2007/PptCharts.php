@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -253,20 +254,20 @@ class PptCharts extends AbstractDecoratorWriter
         $seriesIndex = 0;
         foreach ($chart->getPlotArea()->getType()->getSeries() as $series) {
             // Title
-            $sheet->setCellValueByColumnAndRow(2 + $seriesIndex, 1, $series->getTitle());
+            $sheet->setCellValue(Coordinate::stringFromColumnIndex(2 + $seriesIndex) . 1, $series->getTitle());
 
             // X-axis
             $axisXData = array_keys($series->getValues());
             $numAxisXData = count($axisXData);
             for ($i = 0; $i < $numAxisXData; ++$i) {
-                $sheet->setCellValueByColumnAndRow(1, $i + 2, $axisXData[$i]);
+                $sheet->setCellValue('A' . ($i + 2), $axisXData[$i]);
             }
 
             // Y-axis
             $axisYData = array_values($series->getValues());
             $numAxisYData = count($axisYData);
             for ($i = 0; $i < $numAxisYData; ++$i) {
-                $sheet->setCellValueByColumnAndRow(2 + $seriesIndex, $i + 2, $axisYData[$i]);
+                $sheet->setCellValue(Coordinate::stringFromColumnIndex(2 + $seriesIndex) . ($i + 2), $axisYData[$i]);
             }
 
             ++$seriesIndex;
@@ -430,7 +431,7 @@ class PptCharts extends AbstractDecoratorWriter
         $objWriter->writeAttribute('fontAlgn', $subject->getAlignment()->getVertical());
         $objWriter->writeAttribute('marL', CommonDrawing::pixelsToEmu($subject->getAlignment()->getMarginLeft()));
         $objWriter->writeAttribute('marR', CommonDrawing::pixelsToEmu($subject->getAlignment()->getMarginRight()));
-        $objWriter->writeAttribute('indent', CommonDrawing::pixelsToEmu($subject->getAlignment()->getIndent()));
+        $objWriter->writeAttribute('indent', (int) CommonDrawing::pixelsToEmu($subject->getAlignment()->getIndent()));
         $objWriter->writeAttribute('lvl', $subject->getAlignment()->getLevel());
 
         // a:defRPr
@@ -545,11 +546,6 @@ class PptCharts extends AbstractDecoratorWriter
         $objWriter->endElement();
     }
 
-    /**
-     * Write Legend.
-     *
-     * @param XMLWriter $objWriter XML Writer
-     */
     protected function writeLegend(XMLWriter $objWriter, Legend $subject): void
     {
         // c:legend
@@ -599,7 +595,7 @@ class PptCharts extends AbstractDecoratorWriter
         $objWriter->writeAttribute('fontAlgn', $subject->getAlignment()->getVertical());
         $objWriter->writeAttribute('marL', CommonDrawing::pixelsToEmu($subject->getAlignment()->getMarginLeft()));
         $objWriter->writeAttribute('marR', CommonDrawing::pixelsToEmu($subject->getAlignment()->getMarginRight()));
-        $objWriter->writeAttribute('indent', CommonDrawing::pixelsToEmu($subject->getAlignment()->getIndent()));
+        $objWriter->writeAttribute('indent', (int) CommonDrawing::pixelsToEmu($subject->getAlignment()->getIndent()));
         $objWriter->writeAttribute('lvl', $subject->getAlignment()->getLevel());
 
         // a:defRPr
@@ -1794,6 +1790,9 @@ class PptCharts extends AbstractDecoratorWriter
             $objWriter->endElement();
 
             $objWriter->endElement();
+
+            // c:dLblPos
+            $this->writeElementWithValAttribute($objWriter, 'c:dLblPos', $series->getLabelPosition());
 
             // c:showVal
             $this->writeElementWithValAttribute($objWriter, 'c:showVal', $series->hasShowValue() ? '1' : '0');

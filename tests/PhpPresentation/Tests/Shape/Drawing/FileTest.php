@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -21,6 +22,7 @@ namespace PhpOffice\PhpPresentation\Tests\Shape\Drawing;
 
 use PhpOffice\PhpPresentation\Exception\FileNotFoundException;
 use PhpOffice\PhpPresentation\Shape\Drawing\File;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -68,6 +70,7 @@ class FileTest extends TestCase
     /**
      * @dataProvider dataProviderMimeType
      */
+    #[DataProvider('dataProviderMimeType')]
     public function testMimeType(string $pathFile, string $mimeType): void
     {
         $object = new File();

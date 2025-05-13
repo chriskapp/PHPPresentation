@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -42,6 +43,7 @@ use PhpOffice\PhpPresentation\Style\Fill;
 use PhpOffice\PhpPresentation\Style\Font;
 use PhpOffice\PhpPresentation\Style\Outline;
 use PhpOffice\PhpPresentation\Tests\PhpPresentationTestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class PptChartsTest extends PhpPresentationTestCase
 {
@@ -102,6 +104,7 @@ class PptChartsTest extends PhpPresentationTestCase
     /**
      * @dataProvider dataProviderIncludedSpreadsheet
      */
+    #[DataProvider('dataProviderIncludedSpreadsheet')]
     public function testChartIncludeSpreadsheetNullValue(string $chartType, string $chartElementName): void
     {
         $seriesData = array_merge(['Z' => null], $this->seriesData);
@@ -172,6 +175,7 @@ class PptChartsTest extends PhpPresentationTestCase
     /**
      * @dataProvider dataProviderIncludedSpreadsheet
      */
+    #[DataProvider('dataProviderIncludedSpreadsheet')]
     public function testChartIncludeSpreadsheet(string $chartType, string $chartElementName): void
     {
         $oSlide = $this->oPresentation->getActiveSlide();
@@ -268,8 +272,18 @@ class PptChartsTest extends PhpPresentationTestCase
         $oSlide = $this->oPresentation->getActiveSlide();
         $oShape = $oSlide->createChartShape();
         $oShape->setResizeProportional(false)->setHeight(550)->setWidth(700)->setOffsetX(120)->setOffsetY(80);
-        /** @var AbstractType $stub */
-        $stub = $this->getMockForAbstractClass('PhpOffice\PhpPresentation\Shape\Chart\Type\AbstractType');
+        if (method_exists($this, 'getMockForAbstractClass')) {
+            /** @var AbstractType $stub */
+            $stub = $this->getMockForAbstractClass(AbstractType::class);
+        } else {
+            /** @var AbstractType $stub */
+            $stub = new class() extends AbstractType {
+                public function getHashCode(): string
+                {
+                    return '';
+                }
+            };
+        }
         $oShape->getPlotArea()->setType($stub);
 
         $this->writePresentationFile($this->oPresentation, 'PowerPoint2007');
@@ -710,7 +724,7 @@ class PptChartsTest extends PhpPresentationTestCase
         $this->assertZipXmlAttributeNotExists($pathShape, $element, 'rot');
 
         $this->resetPresentationFile();
-        $value = mt_rand(0, 360);
+        $value = mt_rand(1, 360);
         $oShape->getPlotArea()->getAxisX()->setTitleRotation($value);
 
         $pathShape = 'ppt/charts/' . $oShape->getIndexedFilename();
@@ -750,7 +764,7 @@ class PptChartsTest extends PhpPresentationTestCase
 
     public function testAxisXUnit(): void
     {
-        $value = mt_rand(0, 100);
+        $value = mt_rand(1, 100);
 
         $oSeries = new Series('Downloads', $this->seriesData);
         $oLine = new Line();
@@ -775,7 +789,7 @@ class PptChartsTest extends PhpPresentationTestCase
 
     public function testAxisYUnit(): void
     {
-        $value = mt_rand(0, 100);
+        $value = mt_rand(1, 100);
 
         $oSeries = new Series('Downloads', $this->seriesData);
         $oLine = new Line();
@@ -825,6 +839,7 @@ class PptChartsTest extends PhpPresentationTestCase
     /**
      * @dataProvider dataProviderFont
      */
+    #[DataProvider('dataProviderFont')]
     public function testSeriesFont(string $chartType, string $chartElementName): void
     {
         $oSlide = $this->oPresentation->getActiveSlide();
@@ -1153,6 +1168,7 @@ class PptChartsTest extends PhpPresentationTestCase
     /**
      * @dataProvider dataProviderMarkerSymbol
      */
+    #[DataProvider('dataProviderMarkerSymbol')]
     public function testTypeLineMarker(string $expectedSymbol): void
     {
         $expectedSize = mt_rand(2, 72);
@@ -1216,7 +1232,7 @@ class PptChartsTest extends PhpPresentationTestCase
         $oShape->getPlotArea()->setType($oLine);
 
         $this->assertZipXmlElementExists('ppt/charts/' . $oShape->getIndexedFilename(), $element);
-        $this->assertZipXmlAttributeEquals('ppt/charts/' . $oShape->getIndexedFilename(), $element, 'w', 12700);
+        $this->assertZipXmlAttributeEquals('ppt/charts/' . $oShape->getIndexedFilename(), $element, 'w', 9525);
         $this->assertZipXmlAttributeEquals('ppt/charts/' . $oShape->getIndexedFilename(), $element, 'cmpd', Border::LINE_SINGLE);
         $this->assertZipXmlElementExists('ppt/charts/' . $oShape->getIndexedFilename(), $element . '/a:prstDash');
         $this->assertZipXmlAttributeEquals('ppt/charts/' . $oShape->getIndexedFilename(), $element . '/a:prstDash', 'val', Border::DASH_SOLID);
@@ -1238,6 +1254,35 @@ class PptChartsTest extends PhpPresentationTestCase
         $oShape->getPlotArea()->setType($oLine);
 
         $this->assertZipXmlElementExists('ppt/charts/' . $oShape->getIndexedFilename(), $element);
+
+        $this->assertIsSchemaECMA376Valid();
+    }
+
+    public function testTypeLineSeriesLabelPosition(): void
+    {
+        $expectedElement = '/c:chartSpace/c:chart/c:plotArea/c:lineChart/c:ser/c:dLbls/c:dLblPos';
+
+        $oSlide = $this->oPresentation->getActiveSlide();
+        $oShape = $oSlide->createChartShape();
+        $oShape->setResizeProportional(false)->setHeight(550)->setWidth(700)->setOffsetX(120)->setOffsetY(80);
+        $oLine = new Line();
+        $oSeries = new Series('Downloads', $this->seriesData);
+        $oLine->addSeries($oSeries);
+        $oShape->getPlotArea()->setType($oLine);
+
+        $this->assertZipFileExists('ppt/charts/' . $oShape->getIndexedFilename());
+        $this->assertZipXmlElementExists('ppt/charts/' . $oShape->getIndexedFilename(), $expectedElement);
+        $this->assertZipXmlAttributeEquals('ppt/charts/' . $oShape->getIndexedFilename(), $expectedElement, 'val', Series::LABEL_CENTER);
+
+        $this->assertIsSchemaECMA376Valid();
+
+        $oSeries->setLabelPosition(Series::LABEL_BOTTOM);
+        $oLine->setSeries([$oSeries]);
+        $this->resetPresentationFile();
+
+        $this->assertZipFileExists('ppt/charts/' . $oShape->getIndexedFilename());
+        $this->assertZipXmlElementExists('ppt/charts/' . $oShape->getIndexedFilename(), $expectedElement);
+        $this->assertZipXmlAttributeEquals('ppt/charts/' . $oShape->getIndexedFilename(), $expectedElement, 'val', Series::LABEL_BOTTOM);
 
         $this->assertIsSchemaECMA376Valid();
     }
@@ -1537,6 +1582,7 @@ class PptChartsTest extends PhpPresentationTestCase
     /**
      * @dataProvider dataProviderMarkerSymbol
      */
+    #[DataProvider('dataProviderMarkerSymbol')]
     public function testTypeScatterMarkerSymbol(string $expectedSymbol): void
     {
         $expectedSize = mt_rand(2, 72);
@@ -1600,7 +1646,7 @@ class PptChartsTest extends PhpPresentationTestCase
         $oShape->getPlotArea()->setType($oScatter);
 
         $this->assertZipXmlElementExists('ppt/charts/' . $oShape->getIndexedFilename(), $element);
-        $this->assertZipXmlAttributeEquals('ppt/charts/' . $oShape->getIndexedFilename(), $element, 'w', 12700);
+        $this->assertZipXmlAttributeEquals('ppt/charts/' . $oShape->getIndexedFilename(), $element, 'w', 9525);
         $this->assertZipXmlAttributeEquals('ppt/charts/' . $oShape->getIndexedFilename(), $element, 'cmpd', Border::LINE_SINGLE);
         $this->assertZipXmlElementExists('ppt/charts/' . $oShape->getIndexedFilename(), $element . '/a:prstDash');
         $this->assertZipXmlAttributeEquals('ppt/charts/' . $oShape->getIndexedFilename(), $element . '/a:prstDash', 'val', Border::DASH_SOLID);

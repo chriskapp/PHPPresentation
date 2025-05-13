@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -20,6 +21,7 @@ declare(strict_types=1);
 namespace PhpOffice\PhpPresentation\Tests;
 
 use PhpOffice\PhpPresentation\PresentationProperties;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -80,6 +82,7 @@ class PresentationPropertiesTest extends TestCase
     /**
      * @dataProvider dataProviderSlideshowType
      */
+    #[DataProvider('dataProviderSlideshowType')]
     public function testSlideshowType(?string $value, string $expected): void
     {
         $object = new PresentationProperties();

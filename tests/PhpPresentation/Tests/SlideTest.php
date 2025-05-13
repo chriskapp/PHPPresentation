@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -20,6 +21,8 @@ declare(strict_types=1);
 namespace PhpOffice\PhpPresentation\Tests;
 
 use PhpOffice\PhpPresentation\PhpPresentation;
+use PhpOffice\PhpPresentation\Shape\Drawing\File;
+use PhpOffice\PhpPresentation\ShapeContainerInterface;
 use PhpOffice\PhpPresentation\Slide;
 use PhpOffice\PhpPresentation\Slide\AbstractBackground;
 use PhpOffice\PhpPresentation\Slide\Animation;
@@ -74,8 +77,14 @@ class SlideTest extends TestCase
 
     public function testAnimations(): void
     {
-        /** @var Animation $oStub */
-        $oStub = $this->getMockForAbstractClass(Animation::class);
+        if (method_exists($this, 'getMockForAbstractClass')) {
+            /** @var Animation $oStub */
+            $oStub = $this->getMockForAbstractClass(Animation::class);
+        } else {
+            /** @var Animation $oStub */
+            $oStub = new class() extends Animation {
+            };
+        }
 
         $object = new Slide();
         self::assertIsArray($object->getAnimations());
@@ -93,8 +102,14 @@ class SlideTest extends TestCase
 
     public function testBackground(): void
     {
-        /** @var AbstractBackground $oStub */
-        $oStub = $this->getMockForAbstractClass(AbstractBackground::class);
+        if (method_exists($this, 'getMockForAbstractClass')) {
+            /** @var AbstractBackground $oStub */
+            $oStub = $this->getMockForAbstractClass(AbstractBackground::class);
+        } else {
+            /** @var AbstractBackground $oStub */
+            $oStub = new class() extends AbstractBackground {
+            };
+        }
 
         $object = new Slide();
         self::assertNull($object->getBackground());
@@ -141,5 +156,41 @@ class SlideTest extends TestCase
         self::assertFalse($object->isVisible());
         self::assertInstanceOf(Slide::class, $object->setIsVisible());
         self::assertTrue($object->isVisible());
+    }
+
+    public function testAddShape(): void
+    {
+        $slide = new Slide();
+        self::assertInstanceOf(ShapeContainerInterface::class, $slide);
+        $shape = new File();
+
+        self::assertIsArray($slide->getShapeCollection());
+        self::assertCount(0, $slide->getShapeCollection());
+
+        $slide->addShape($shape);
+        self::assertInstanceOf(File::class, $shape);
+        self::assertEquals($slide, $shape->getContainer());
+        self::assertInstanceOf(Slide::class, $shape->getContainer());
+
+        self::assertIsArray($slide->getShapeCollection());
+        self::assertCount(1, $slide->getShapeCollection());
+        self::assertEquals([$shape], $slide->getShapeCollection());
+    }
+
+    public function testCreateDrawingShape(): void
+    {
+        $slide = new Slide();
+
+        self::assertIsArray($slide->getShapeCollection());
+        self::assertCount(0, $slide->getShapeCollection());
+
+        $shape = $slide->createDrawingShape();
+        self::assertInstanceOf(File::class, $shape);
+        self::assertEquals($slide, $shape->getContainer());
+        self::assertInstanceOf(Slide::class, $shape->getContainer());
+
+        self::assertIsArray($slide->getShapeCollection());
+        self::assertCount(1, $slide->getShapeCollection());
+        self::assertEquals([$shape], $slide->getShapeCollection());
     }
 }

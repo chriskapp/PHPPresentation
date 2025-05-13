@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -122,5 +123,11 @@ class ODPresentationTest extends PhpPresentationTestCase
         $this->assertZipFileExists('Thumbnails/thumbnail.png');
         $this->assertZipFileExists('META-INF/manifest.xml');
         $this->assertZipXmlElementExists('META-INF/manifest.xml', $xPathManifest);
+    }
+
+    public function testOrderFileInZip(): void
+    {
+        $this->assertZipFileExists('mimetype');
+        $this->assertZipFilePositionEquals('mimetype', 0);
     }
 }

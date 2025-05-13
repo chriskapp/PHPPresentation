@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -71,12 +72,12 @@ class Paragraph implements ComparableInterface
     private $lineSpacingMode = self::LINE_SPACING_MODE_PERCENT;
 
     /**
-     * @var int
+     * @var float
      */
     private $spacingBefore = 0;
 
     /**
-     * @var int
+     * @var float
      */
     private $spacingAfter = 0;
 
@@ -317,10 +318,8 @@ class Paragraph implements ComparableInterface
 
     /**
      * Value in points.
-     *
-     * @param int $lineSpacing
      */
-    public function setLineSpacing($lineSpacing): self
+    public function setLineSpacing(int $lineSpacing): self
     {
         $this->lineSpacing = $lineSpacing;
 
@@ -347,7 +346,7 @@ class Paragraph implements ComparableInterface
     /**
      * Value in points.
      */
-    public function getSpacingBefore(): int
+    public function getSpacingBefore(): float
     {
         return $this->spacingBefore;
     }
@@ -355,7 +354,7 @@ class Paragraph implements ComparableInterface
     /**
      * Value in points.
      */
-    public function setSpacingBefore(int $spacingBefore): self
+    public function setSpacingBefore(float $spacingBefore): self
     {
         $this->spacingBefore = $spacingBefore;
 
@@ -365,7 +364,7 @@ class Paragraph implements ComparableInterface
     /**
      * Value in points.
      */
-    public function getSpacingAfter(): int
+    public function getSpacingAfter(): float
     {
         return $this->spacingAfter;
     }
@@ -373,7 +372,7 @@ class Paragraph implements ComparableInterface
     /**
      * Value in points.
      */
-    public function setSpacingAfter(int $spacingAfter): self
+    public function setSpacingAfter(float $spacingAfter): self
     {
         $this->spacingAfter = $spacingAfter;
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -32,8 +33,14 @@ class AnimationTest extends TestCase
 {
     public function testShape(): void
     {
-        /** @var AbstractShape $oStub */
-        $oStub = $this->getMockForAbstractClass(AbstractShape::class);
+        if (method_exists($this, 'getMockForAbstractClass')) {
+            /** @var AbstractShape $oStub */
+            $oStub = $this->getMockForAbstractClass(AbstractShape::class);
+        } else {
+            /** @var AbstractShape $oStub */
+            $oStub = new class() extends AbstractShape {
+            };
+        }
 
         $object = new Animation();
 

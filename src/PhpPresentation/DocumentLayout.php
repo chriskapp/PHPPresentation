@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -133,6 +134,9 @@ class DocumentLayout
 
                 break;
             case self::LAYOUT_CUSTOM:
+                $this->layout = self::LAYOUT_CUSTOM;
+
+                break;
             default:
                 $this->layout = self::LAYOUT_CUSTOM;
                 $this->dimensionX = $pValue['cx'];

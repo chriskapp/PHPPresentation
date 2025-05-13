@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -18,6 +19,8 @@
 declare(strict_types=1);
 
 namespace PhpOffice\PhpPresentation\Shape\RichText;
+
+use PhpOffice\PhpPresentation\Style\Font;
 
 /**
  * Rich text element interface.
@@ -43,7 +46,7 @@ interface TextElementInterface
     /**
      * Get font.
      *
-     * @return \PhpOffice\PhpPresentation\Style\Font
+     * @return Font
      */
     public function getFont();
 

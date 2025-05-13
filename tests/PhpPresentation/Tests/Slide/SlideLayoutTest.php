@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -32,8 +33,14 @@ class SlideLayoutTest extends TestCase
 {
     public function testBase(): void
     {
-        /** @var SlideMaster $mockSlideMaster */
-        $mockSlideMaster = $this->getMockForAbstractClass(SlideMaster::class);
+        if (method_exists($this, 'getMockForAbstractClass')) {
+            /** @var SlideMaster $mockSlideMaster */
+            $mockSlideMaster = $this->getMockForAbstractClass(SlideMaster::class);
+        } else {
+            /** @var SlideMaster $mockSlideMaster */
+            $mockSlideMaster = new class() extends SlideMaster {
+            };
+        }
 
         $object = new SlideLayout($mockSlideMaster);
         self::assertInstanceOf('PhpOffice\\PhpPresentation\\Slide\\AbstractSlide', $object);
@@ -43,8 +50,14 @@ class SlideLayoutTest extends TestCase
 
     public function testLayoutName(): void
     {
-        /** @var SlideMaster $mockSlideMaster */
-        $mockSlideMaster = $this->getMockForAbstractClass(SlideMaster::class);
+        if (method_exists($this, 'getMockForAbstractClass')) {
+            /** @var SlideMaster $mockSlideMaster */
+            $mockSlideMaster = $this->getMockForAbstractClass(SlideMaster::class);
+        } else {
+            /** @var SlideMaster $mockSlideMaster */
+            $mockSlideMaster = new class() extends SlideMaster {
+            };
+        }
 
         // Expected
         $expectedLayoutName = 'Title' . mt_rand(1, 100);
@@ -58,8 +71,14 @@ class SlideLayoutTest extends TestCase
 
     public function testSlideMaster(): void
     {
-        /** @var SlideMaster $mockSlideMaster */
-        $mockSlideMaster = $this->getMockForAbstractClass(SlideMaster::class);
+        if (method_exists($this, 'getMockForAbstractClass')) {
+            /** @var SlideMaster $mockSlideMaster */
+            $mockSlideMaster = $this->getMockForAbstractClass(SlideMaster::class);
+        } else {
+            /** @var SlideMaster $mockSlideMaster */
+            $mockSlideMaster = new class() extends SlideMaster {
+            };
+        }
 
         $object = new SlideLayout($mockSlideMaster);
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -149,8 +150,8 @@ class Styles extends AbstractDecoratorWriter
         $objWriter->writeAttribute('fo:margin-bottom', '0cm');
         $objWriter->writeAttribute('fo:margin-left', '0cm');
         $objWriter->writeAttribute('fo:margin-right', '0cm');
-        $objWriter->writeAttribute('fo:page-width', Text::numberFormat(CommonDrawing::pixelsToCentimeters(CommonDrawing::emuToPixels((int) $this->getPresentation()->getLayout()->getCX())), 1) . 'cm');
-        $objWriter->writeAttribute('fo:page-height', Text::numberFormat(CommonDrawing::pixelsToCentimeters(CommonDrawing::emuToPixels((int) $this->getPresentation()->getLayout()->getCY())), 1) . 'cm');
+        $objWriter->writeAttribute('fo:page-width', Text::numberFormat(CommonDrawing::pixelsToCentimeters((int) CommonDrawing::emuToPixels((int) $this->getPresentation()->getLayout()->getCX())), 1) . 'cm');
+        $objWriter->writeAttribute('fo:page-height', Text::numberFormat(CommonDrawing::pixelsToCentimeters((int) CommonDrawing::emuToPixels((int) $this->getPresentation()->getLayout()->getCY())), 1) . 'cm');
         $printOrientation = 'portrait';
         if ($this->getPresentation()->getLayout()->getCX() > $this->getPresentation()->getLayout()->getCY()) {
             $printOrientation = 'landscape';

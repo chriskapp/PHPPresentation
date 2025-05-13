@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -25,7 +26,7 @@ class Mimetype extends AbstractDecoratorWriter
 {
     public function render(): ZipInterface
     {
-        $this->getZip()->addFromString('mimetype', 'application/vnd.oasis.opendocument.presentation');
+        $this->getZip()->addFromString('mimetype', 'application/vnd.oasis.opendocument.presentation', false);
 
         return $this->getZip();
     }

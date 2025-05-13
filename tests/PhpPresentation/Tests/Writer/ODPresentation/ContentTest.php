@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of PHPPresentation - A pure PHP library for reading and writing
  * presentations documents.
@@ -35,6 +36,7 @@ use PhpOffice\PhpPresentation\Style\Color;
 use PhpOffice\PhpPresentation\Style\Fill;
 use PhpOffice\PhpPresentation\Style\Font;
 use PhpOffice\PhpPresentation\Tests\PhpPresentationTestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use ReflectionClass;
 
 /**
@@ -503,6 +505,18 @@ class ContentTest extends PhpPresentationTestCase
         $this->assertZipXmlAttributeStartsWith('content.xml', $element, 'draw:stroke-dash', 'strokeDash_');
         $this->assertZipXmlAttributeEndsWith('content.xml', $element, 'draw:stroke-dash', $oRichText1->getBorder()->getDashStyle());
         $this->assertIsSchemaOpenDocumentValid('1.2');
+    }
+
+    public function testRichTextRotation(): void
+    {
+        $expectedValue = mt_rand(1, 360);
+        $oRichText1 = $this->oPresentation->getActiveSlide()->createRichTextShape();
+        $oRichText1->setRotation($expectedValue);
+
+        $element = '/office:document-content/office:body/office:presentation/draw:page/draw:frame';
+        $this->assertZipXmlElementExists('content.xml', $element);
+        $this->assertZipXmlAttributeExists('content.xml', $element, 'draw:transform');
+        $this->assertZipXmlAttributeEquals('content.xml', $element, 'draw:transform', 'rotate (-' . deg2rad($expectedValue) . ') translate (0.000cm 0.000cm)');
     }
 
     public function testRichTextShadow(): void
@@ -1257,6 +1271,7 @@ class ContentTest extends PhpPresentationTestCase
     /**
      * @dataProvider dataProviderShowType
      */
+    #[DataProvider('dataProviderShowType')]
     public function testShowType(string $slideshowType, bool $withAttribute): void
     {
         $this->oPresentation->getPresentationProperties()->setSlideshowType($slideshowType);
@@ -1297,6 +1312,7 @@ class ContentTest extends PhpPresentationTestCase
     /**
      * @dataProvider dataProviderLoopContinuouslyUntilEsc
      */
+    #[DataProvider('dataProviderLoopContinuouslyUntilEsc')]
     public function testLoopContinuouslyUntilEsc(bool $isLoopContinuouslyUntilEsc): void
     {
         $this->oPresentation->getPresentationProperties()->setLoopContinuouslyUntilEsc($isLoopContinuouslyUntilEsc);
