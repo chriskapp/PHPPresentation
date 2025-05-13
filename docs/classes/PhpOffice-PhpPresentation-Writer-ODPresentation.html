@@ -54,7 +54,7 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
+                    <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/phpoffice.html" class="">PhpOffice</a>
@@ -67,7 +67,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/Application.html" class="">Application</a>
@@ -75,14 +75,14 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
@@ -125,11 +125,14 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/ODPresentation.php"><a href="files/src-phppresentation-writer-odpresentation.html"><abbr title="src/PhpPresentation/Writer/ODPresentation.php">ODPresentation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
             <p class="phpdocumentor-summary">ODPresentation writer.</p>
+
+
+
 
 
 
@@ -164,40 +167,46 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_chartArray">$chartArray</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_chartArray">$chartArray</a>
     <span>
                         &nbsp;: array&lt;string|int, <a href="classes/PhpOffice-PhpPresentation-Shape-Chart.html"><abbr title="\PhpOffice\PhpPresentation\Shape\Chart">Chart</abbr></a>&gt;            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oDrawingHashTable">$oDrawingHashTable</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oDrawingHashTable">$oDrawingHashTable</a>
     <span>
                         &nbsp;: <a href="classes/PhpOffice-PhpPresentation-HashTable.html"><abbr title="\PhpOffice\PhpPresentation\HashTable">HashTable</abbr></a>            </span>
 </dt>
 <dd>Private unique hash table.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oPresentation">$oPresentation</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oPresentation">$oPresentation</a>
     <span>
                         &nbsp;: null|<a href="classes/PhpOffice-PhpPresentation-PhpPresentation.html"><abbr title="\PhpOffice\PhpPresentation\PhpPresentation">PhpPresentation</abbr></a>            </span>
 </dt>
 <dd>Private PhpPresentation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oZipAdapter">$oZipAdapter</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oZipAdapter">$oZipAdapter</a>
     <span>
                         &nbsp;: null|<abbr title="\PhpOffice\Common\Adapter\Zip\ZipInterface">ZipInterface</abbr>            </span>
 </dt>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_pdfAdapter">$pdfAdapter</a>
+    <span>
+                        &nbsp;: null|<a href="classes/PhpOffice-PhpPresentation-Writer-PDF-PDFWriterInterface.html"><abbr title="\PhpOffice\PhpPresentation\Writer\PDF\PDFWriterInterface">PDFWriterInterface</abbr></a>            </span>
+</dt>
+
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_diskCachingDirectory">$diskCachingDirectory</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_diskCachingDirectory">$diskCachingDirectory</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
 <dd>Disk caching directory.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_useDiskCaching">$useDiskCaching</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_useDiskCaching">$useDiskCaching</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
@@ -212,88 +221,99 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method___construct">__construct()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd>Create a new \PhpOffice\PhpPresentation\Writer\ODPresentation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_getDiskCachingDirectory">getDiskCachingDirectory()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_getDiskCachingDirectory">getDiskCachingDirectory()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Get disk caching directory.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getDrawingHashTable">getDrawingHashTable()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getDrawingHashTable">getDrawingHashTable()</a>
     <span>
                                 &nbsp;: <a href="classes/PhpOffice-PhpPresentation-HashTable.html"><abbr title="\PhpOffice\PhpPresentation\HashTable">HashTable</abbr></a>    </span>
 </dt>
 <dd>Get drawing hash table.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getPhpPresentation">getPhpPresentation()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getPDFAdapter">getPDFAdapter()</a>
+    <span>
+                                &nbsp;: <a href="classes/PhpOffice-PhpPresentation-Writer-PDF-PDFWriterInterface.html"><abbr title="\PhpOffice\PhpPresentation\Writer\PDF\PDFWriterInterface">PDFWriterInterface</abbr></a>|null    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getPhpPresentation">getPhpPresentation()</a>
     <span>
                                 &nbsp;: <a href="classes/PhpOffice-PhpPresentation-PhpPresentation.html"><abbr title="\PhpOffice\PhpPresentation\PhpPresentation">PhpPresentation</abbr></a>|null    </span>
 </dt>
 <dd>Get PhpPresentation object.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getZipAdapter">getZipAdapter()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getZipAdapter">getZipAdapter()</a>
     <span>
                                 &nbsp;: <abbr title="\PhpOffice\Common\Adapter\Zip\ZipInterface">ZipInterface</abbr>|null    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_hasDiskCaching">hasDiskCaching()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_hasDiskCaching">hasDiskCaching()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Get use disk caching where possible?</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_save">save()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_save">save()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Save PhpPresentation to file.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setPhpPresentation">setPhpPresentation()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setPDFAdapter">setPDFAdapter()</a>
+    <span>
+                                &nbsp;: self    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setPhpPresentation">setPhpPresentation()</a>
     <span>
                                 &nbsp;: self    </span>
 </dt>
 <dd>Get PhpPresentation object.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_setUseDiskCaching">setUseDiskCaching()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_setUseDiskCaching">setUseDiskCaching()</a>
     <span>
                                 &nbsp;: <a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html"><abbr title="\PhpOffice\PhpPresentation\Writer\ODPresentation">ODPresentation</abbr></a>    </span>
 </dt>
 <dd>Set use disk caching where possible?</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setZipAdapter">setZipAdapter()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setZipAdapter">setZipAdapter()</a>
     <span>
                                 &nbsp;: self    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_allDrawings">allDrawings()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_allDrawings">allDrawings()</a>
     <span>
                                 &nbsp;: array&lt;int, <a href="classes/PhpOffice-PhpPresentation-AbstractShape.html"><abbr title="\PhpOffice\PhpPresentation\AbstractShape">AbstractShape</abbr></a>&gt;    </span>
 </dt>
 <dd>Get an array of all drawings.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_iterateCollection">iterateCollection()</a>
+    <a class="" href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_iterateCollection">iterateCollection()</a>
     <span>
                                 &nbsp;: array&lt;int, <a href="classes/PhpOffice-PhpPresentation-AbstractShape.html"><abbr title="\PhpOffice\PhpPresentation\AbstractShape">AbstractShape</abbr></a>&gt;    </span>
 </dt>
 
     </dl>
-
 
 
 
@@ -323,10 +343,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/ODPresentation.php"><a href="files/src-phppresentation-writer-odpresentation.html"><abbr title="src/PhpPresentation/Writer/ODPresentation.php">ODPresentation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
+    
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -336,6 +357,8 @@
 
     
     
+    
+
     
 
 </article>
@@ -356,12 +379,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Private unique hash table.</p>
 
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type"><a href="classes/PhpOffice-PhpPresentation-HashTable.html"><abbr title="\PhpOffice\PhpPresentation\HashTable">HashTable</abbr></a></span>
@@ -370,6 +394,8 @@
 
     
     
+    
+
     
 
 </article>
@@ -390,12 +416,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Private PhpPresentation.</p>
 
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">null|<a href="classes/PhpOffice-PhpPresentation-PhpPresentation.html"><abbr title="\PhpOffice\PhpPresentation\PhpPresentation">PhpPresentation</abbr></a></span>
@@ -404,6 +431,8 @@
 
     
     
+    
+
     
 
 </article>
@@ -424,10 +453,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
+    
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -437,6 +467,44 @@
 
     
     
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_pdfAdapter">
+        $pdfAdapter
+        <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_pdfAdapter" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">51</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">null|<a href="classes/PhpOffice-PhpPresentation-Writer-PDF-PDFWriterInterface.html"><abbr title="\PhpOffice\PhpPresentation\Writer\PDF\PDFWriterInterface">PDFWriterInterface</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$pdfAdapter</span>
+    </code>
+
+    
+    
+    
+
     
 
 </article>
@@ -457,12 +525,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/ODPresentation.php"><a href="files/src-phppresentation-writer-odpresentation.html"><abbr title="src/PhpPresentation/Writer/ODPresentation.php">ODPresentation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Disk caching directory.</p>
 
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string</span>
@@ -471,6 +540,8 @@
 
     
     
+    
+
     
 
 </article>
@@ -491,12 +562,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/ODPresentation.php"><a href="files/src-phppresentation-writer-odpresentation.html"><abbr title="src/PhpPresentation/Writer/ODPresentation.php">ODPresentation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Use disk caching where possible?</p>
 
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">bool</span>
@@ -505,6 +577,8 @@
 
     
     
+    
+
     
 
 </article>
@@ -530,7 +604,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/ODPresentation.php"><a href="files/src-phppresentation-writer-odpresentation.html"><abbr title="src/PhpPresentation/Writer/ODPresentation.php">ODPresentation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -543,6 +617,7 @@
     <div class="phpdocumentor-label-line">
         </div>
     
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -553,6 +628,8 @@
                 
             </dd>
             </dl>
+
+    
 
     
 
@@ -572,7 +649,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/ODPresentation.php"><a href="files/src-phppresentation-writer-odpresentation.html"><abbr title="src/PhpPresentation/Writer/ODPresentation.php">ODPresentation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">180</span>
+    <span class="phpdocumentor-element-found-in__line">170</span>
 
     </aside>
 
@@ -586,6 +663,9 @@
         </div>
     
     
+    
+    
+
     
 
             <section>
@@ -608,7 +688,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 
     </aside>
 
@@ -623,10 +703,51 @@
     
     
     
+    
+
+    
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/PhpOffice-PhpPresentation-HashTable.html"><abbr title="\PhpOffice\PhpPresentation\HashTable">HashTable</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getPDFAdapter">
+        getPDFAdapter()
+        <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getPDFAdapter" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">66</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getPDFAdapter</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/PhpOffice-PhpPresentation-Writer-PDF-PDFWriterInterface.html"><abbr title="\PhpOffice\PhpPresentation\Writer\PDF\PDFWriterInterface">PDFWriterInterface</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/PhpOffice-PhpPresentation-Writer-PDF-PDFWriterInterface.html"><abbr title="\PhpOffice\PhpPresentation\Writer\PDF\PDFWriterInterface">PDFWriterInterface</abbr></a>|null</span>
             </section>
 
 </article>
@@ -644,7 +765,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 
     </aside>
 
@@ -658,6 +779,9 @@
         </div>
     
     
+    
+    
+
     
 
             <section>
@@ -680,7 +804,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 
     </aside>
 
@@ -693,6 +817,9 @@
         </div>
     
     
+    
+    
+
     
 
             <section>
@@ -715,7 +842,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/ODPresentation.php"><a href="files/src-phppresentation-writer-odpresentation.html"><abbr title="src/PhpPresentation/Writer/ODPresentation.php">ODPresentation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">149</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
@@ -729,6 +856,9 @@
         </div>
     
     
+    
+    
+
     
 
             <section>
@@ -751,7 +881,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/ODPresentation.php"><a href="files/src-phppresentation-writer-odpresentation.html"><abbr title="src/PhpPresentation/Writer/ODPresentation.php">ODPresentation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
@@ -763,6 +893,7 @@
 
     <div class="phpdocumentor-label-line">
         </div>
+    
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -778,6 +909,56 @@
     
 
     
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setPDFAdapter">
+        setPDFAdapter()
+        <a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setPDFAdapter" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">79</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setPDFAdapter</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/PhpOffice-PhpPresentation-Writer-PDF-PDFWriterInterface.html"><abbr title="\PhpOffice\PhpPresentation\Writer\PDF\PDFWriterInterface">PDFWriterInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pdfAdapter</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$pdfAdapter</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/PhpOffice-PhpPresentation-Writer-PDF-PDFWriterInterface.html"><abbr title="\PhpOffice\PhpPresentation\Writer\PDF\PDFWriterInterface">PDFWriterInterface</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -793,7 +974,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 
     </aside>
 
@@ -805,6 +986,7 @@
 
     <div class="phpdocumentor-label-line">
         </div>
+    
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -818,6 +1000,8 @@
 
             </dd>
             </dl>
+
+    
 
     
 
@@ -841,7 +1025,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/ODPresentation.php"><a href="files/src-phppresentation-writer-odpresentation.html"><abbr title="src/PhpPresentation/Writer/ODPresentation.php">ODPresentation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 
     </aside>
 
@@ -853,6 +1037,7 @@
 
     <div class="phpdocumentor-label-line">
         </div>
+    
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -876,6 +1061,8 @@
 
     
 
+    
+
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html"><abbr title="\PhpOffice\PhpPresentation\Writer\ODPresentation">ODPresentation</abbr></a></span>
@@ -896,7 +1083,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 
     </aside>
 
@@ -908,6 +1095,7 @@
     <div class="phpdocumentor-label-line">
         </div>
     
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -918,6 +1106,8 @@
                 
             </dd>
             </dl>
+
+    
 
     
 
@@ -941,7 +1131,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 
     </aside>
 
@@ -955,6 +1145,9 @@
         </div>
     
     
+    
+    
+
     
 
             <section>
@@ -977,7 +1170,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PhpPresentation/Writer/AbstractWriter.php"><a href="files/src-phppresentation-writer-abstractwriter.html"><abbr title="src/PhpPresentation/Writer/AbstractWriter.php">AbstractWriter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 
     </aside>
 
@@ -989,6 +1182,7 @@
     <div class="phpdocumentor-label-line">
         </div>
     
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -999,6 +1193,8 @@
                 
             </dd>
             </dl>
+
+    
 
     
 
@@ -1121,30 +1317,33 @@
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_chartArray">$chartArray<a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html"></li>
-                                                    <li><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oDrawingHashTable">$oDrawingHashTable<a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html"></li>
-                                                    <li><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oPresentation">$oPresentation<a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html"></li>
-                                                    <li><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oZipAdapter">$oZipAdapter<a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html"></li>
-                                                    <li><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_diskCachingDirectory">$diskCachingDirectory<a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html"></li>
-                                                    <li><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_useDiskCaching">$useDiskCaching<a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html"></li>
+                                                    <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_chartArray">$chartArray</a></li>
+                                                    <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oDrawingHashTable">$oDrawingHashTable</a></li>
+                                                    <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oPresentation">$oPresentation</a></li>
+                                                    <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_oZipAdapter">$oZipAdapter</a></li>
+                                                    <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#property_pdfAdapter">$pdfAdapter</a></li>
+                                                    <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_diskCachingDirectory">$diskCachingDirectory</a></li>
+                                                    <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#property_useDiskCaching">$useDiskCaching</a></li>
                                             </ul>
                 </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method___construct">__construct()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_getDiskCachingDirectory">getDiskCachingDirectory()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getDrawingHashTable">getDrawingHashTable()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getPhpPresentation">getPhpPresentation()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getZipAdapter">getZipAdapter()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_hasDiskCaching">hasDiskCaching()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_save">save()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setPhpPresentation">setPhpPresentation()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_setUseDiskCaching">setUseDiskCaching()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setZipAdapter">setZipAdapter()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_allDrawings">allDrawings()</a></li>
-                                            <li><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_iterateCollection">iterateCollection()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_getDiskCachingDirectory">getDiskCachingDirectory()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getDrawingHashTable">getDrawingHashTable()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getPDFAdapter">getPDFAdapter()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getPhpPresentation">getPhpPresentation()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_getZipAdapter">getZipAdapter()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_hasDiskCaching">hasDiskCaching()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_save">save()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setPDFAdapter">setPDFAdapter()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setPhpPresentation">setPhpPresentation()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-ODPresentation.html#method_setUseDiskCaching">setUseDiskCaching()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_setZipAdapter">setZipAdapter()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_allDrawings">allDrawings()</a></li>
+                                            <li class=""><a href="classes/PhpOffice-PhpPresentation-Writer-AbstractWriter.html#method_iterateCollection">iterateCollection()</a></li>
                                     </ul>
             </li>
                     </ul>
